@@ -4048,3 +4048,556 @@ a:hover {
     outline: 2px solid Highlight;
   }
 }
+
+/* ==========================================================
+   SISTAAAAA.EXE | FINAL MOBILE + LAYOUT REPAIR
+   Paste at the VERY END of styles.css
+   ========================================================== */
+
+/* Global reset and typography */
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  background: #080d1c;
+  color: #f2f6ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+#app,
+.app,
+.app-body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  overflow-x: clip;
+}
+
+main,
+#main-content,
+.page,
+.page-content,
+.browser-content,
+.browser-viewport {
+  min-width: 0;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+/* Boot screen */
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px;
+  overflow-y: auto;
+  background:
+    radial-gradient(ellipse at 50% 25%, #172e54 0%, #0b1429 48%, #060a15 100%);
+  color: #f2f6ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.boot-window {
+  position: relative;
+  width: min(100%, 620px);
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid #8bdcff55;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #101d38f5, #090f20f7);
+  box-shadow: 0 25px 90px #0009, 0 0 40px #4dbaff12;
+}
+
+.boot-window__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 45px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ffffff18;
+  background: #ffffff06;
+}
+
+.window-lights {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 5px;
+}
+
+.window-light {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.window-light--pink { background: #f0a9df; }
+.window-light--blue { background: #8bdcff; }
+.window-light--silver { background: #dce7f7; }
+
+.boot-window__caption {
+  flex: 1;
+  min-width: 0;
+  color: #b8c5df;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  overflow-wrap: anywhere;
+}
+
+.boot-window__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9cf0d0;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+}
+
+.status-led {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #9cf0d0;
+  box-shadow: 0 0 10px #9cf0d088;
+}
+
+.boot-window__body {
+  padding: clamp(22px, 5vw, 42px);
+}
+
+.boot-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 25px;
+  border: 1px solid #8bdcff80;
+  border-radius: 50%;
+  background: radial-gradient(circle, #315b8b66, #111d3800 70%);
+  box-shadow: 0 0 30px #6fcfff20;
+}
+
+.boot-logo__outer-ring,
+.boot-logo__inner-ring {
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #8bdcff70;
+  border-radius: 50%;
+}
+
+.boot-logo__inner-ring {
+  inset: 15px;
+  border-color: #b8a4ff88;
+}
+
+.boot-logo__star {
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  color: #8bdcff;
+  font-size: 15px;
+}
+
+.boot-logo__core {
+  color: #f2f6ff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.boot-heading {
+  text-align: center;
+}
+
+.boot-heading .eyebrow {
+  margin: 0 0 12px;
+  color: #8bdcff;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+
+#boot-title {
+  margin: 0;
+  color: #f2f6ff;
+  font-size: clamp(30px, 7vw, 49px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  overflow-wrap: anywhere;
+}
+
+#boot-title span {
+  color: #8bdcff;
+}
+
+.boot-subtitle {
+  margin: 14px 0 25px;
+  color: #b8c5df;
+  font-size: 14px;
+}
+
+.boot-terminal {
+  margin: 0 0 22px;
+  padding: 16px;
+  border: 1px solid #ffffff14;
+  border-radius: 12px;
+  background: #060b17a8;
+  color: #b8c5df;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.boot-terminal p {
+  margin: 0;
+}
+
+.boot-progress,
+.boot-progress__bar,
+.boot-progress__fill {
+  max-width: 100%;
+}
+
+.boot-progress {
+  height: 5px;
+  margin: 18px 0 10px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #ffffff18;
+}
+
+.boot-progress__bar,
+.boot-progress__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #527fff, #8bdcff);
+}
+
+.boot-window__body .button,
+.boot-actions .button,
+.boot-screen .button {
+  min-height: 42px;
+  border-radius: 10px;
+}
+
+.boot-actions,
+.boot-window__actions,
+.boot-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Homepage hero: stop the headline overlapping itself */
+.home-hero {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.home-hero__content,
+.home-hero__copy,
+.home-hero__visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.home-hero__title {
+  max-width: 100%;
+  margin: 16px 0 22px;
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: .99;
+  letter-spacing: -.055em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.home-hero__title span {
+  display: inline;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.home-hero__lead,
+.home-hero__description {
+  max-width: 60ch;
+  line-height: 1.65;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.home-hero__actions .button {
+  flex: 0 1 auto;
+  width: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.home-hero__metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.home-hero__metadata > *,
+.home-status-strip__item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Keep decorative circles behind hero content */
+.home-hero__visual,
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero__visual::before,
+.home-hero__visual::after {
+  pointer-events: none;
+}
+
+/* Navigation and page width */
+.browser-shell {
+  width: min(1440px, calc(100% - 32px));
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.browser-content,
+.browser-viewport,
+.browser-main {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.browser-toolbar,
+.browser-navigation,
+.browser-header {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.browser-brand,
+.browser-brand__wordmark {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.utility-dock {
+  max-width: calc(100vw - 16px);
+}
+
+/* Music player: remain inside the viewport */
+.music-player {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.music-player__compact,
+.music-player__expanded,
+.music-player__controls {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.music-player__track-title {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Prevent horizontal overflow throughout the app */
+.panel,
+.card,
+.dialog,
+.explorer-card,
+.gallery-card,
+.letter-paper,
+.game-panel,
+.wish-generator__frame {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .boot-screen {
+    align-items: center;
+    padding: 14px;
+  }
+
+  .boot-window {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .boot-window__titlebar {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .boot-window__caption {
+    font-size: 8px;
+    letter-spacing: .035em;
+  }
+
+  .boot-window__status {
+    font-size: 8px;
+  }
+
+  .boot-window__body {
+    padding: 22px 18px;
+  }
+
+  .boot-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  #boot-title {
+    font-size: clamp(29px, 8.5vw, 42px);
+  }
+
+  .boot-subtitle {
+    font-size: 13px;
+  }
+
+  .boot-terminal {
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .home-hero__title {
+    max-width: 100%;
+    font-size: clamp(36px, 10vw, 52px);
+    line-height: 1;
+    letter-spacing: -.05em;
+  }
+
+  .home-hero__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero__actions .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home-hero__metadata {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .browser-shell {
+    width: calc(100% - 16px);
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+  }
+
+  .utility-dock {
+    right: 8px;
+    gap: 5px;
+  }
+
+  .music-player {
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    left: 8px;
+    width: auto;
+    max-width: none;
+  }
+
+  .music-player__compact {
+    gap: 8px;
+  }
+
+  .music-player__track-title {
+    max-width: 32vw;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .boot-window__status {
+    display: none;
+  }
+
+  .boot-window__body {
+    padding: 18px 14px;
+  }
+
+  #boot-title {
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .home-hero__title {
+    font-size: clamp(33px, 9.5vw, 42px);
+  }
+
+  .home-hero__metadata {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
